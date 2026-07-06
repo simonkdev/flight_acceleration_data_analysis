@@ -1,4 +1,5 @@
 ROLLING_WINDOW = 12
+IMAGES_DIR = "images/"
 
 from time import time
 
@@ -72,11 +73,11 @@ printSection("Visualization")
 
 printStatus("Creating noisy scatter plots...")
 
-grid_plot_one_row(df)
+grid_plot_one_row(df, True)
 
 printStatus("Saving noisy scatter plots...")
 
-plt.savefig("acceleration_scatterplots.png", dpi=300, bbox_inches="tight")
+plt.savefig(IMAGES_DIR + "acceleration_scatterplots.png", dpi=300, bbox_inches="tight")
 
 printStatus("Noisy plots saved.")
 
@@ -114,6 +115,6 @@ printStatus("Creating smoothed plot...")
 grid_plot_one_row(smoothed_df, True)
 
 printStatus("Saving smoothed plot...")
-plt.savefig("smoothed_acceleration.png", dpi=300, bbox_inches="tight")
+plt.savefig(IMAGES_DIR + "smoothed_acceleration.png", dpi=300, bbox_inches="tight")
 printStatus("Smoothed plot saved.")
 plt.show()
