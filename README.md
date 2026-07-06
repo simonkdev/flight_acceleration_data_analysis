@@ -15,8 +15,8 @@ This project was created to experiment with:
 
 ### Data Source
 - **Device**: Smartphone accelerometer
-- **Context**: Aircraft takeoff and landing
-- **Data Type**: 3-axis acceleration (X, Y, Z) + absolute acceleration
+- **Context**: Aircraft landing
+- **Data Type**: 3-axis timestamped acceleration (X, Y, Z) + absolute acceleration
 
 ---
 ## ✨ Features
@@ -25,8 +25,10 @@ This project was created to experiment with:
 - **Touchdown Detection**: Automatic identification of landing moment
 - **Jerk Calculation**: Rate of change of acceleration
 - **Roughness Scoring**: Quantitative landing quality assessment
-- **Landing Grading**: Automatic score (0-10) based on acceleration and jerk
+- **Landing Grading**: Automatic score (0-10) based on acceleration and jerk for qualitative comparison
 - **Visualization**: Multiple plot types for different analysis aspects
+
+If you want to use your own recordings, just replace the data source file with your own and adjust the column names to the example. I used phyphox on my phone, aligned to the plane I was sitting in with screen-to-sky and top-to-front. 
 
 ---
 ## 🔧 Analysis Methodology
@@ -42,7 +44,7 @@ This project was created to experiment with:
    - RMS of absolute jerk values after touchdown
    - Higher values indicate rougher landings
 6. **Landing Grade**:
-   - Formula: `10 - (roughness/max_accel)*3 - (avg_jerk)*4`
+   - Formula: `10 - (roughness/max_accel)*3 - (avg_abs_jerk)*4`
    - Range: 0-10 (higher is smoother)
 
 ### Key Parameters
