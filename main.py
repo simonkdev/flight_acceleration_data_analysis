@@ -1,5 +1,6 @@
 ROLLING_WINDOW = 12
 IMAGES_DIR = "images/"
+CSV_DIR = "tables/"
 
 from time import time
 
@@ -27,7 +28,7 @@ from rich.progress import Progress
 printInit("Library imports completed.")
 
 printInit("Loading data...")
-df = pd.read_csv("plane_landing.csv")
+df = pd.read_csv(CSV_DIR + "plane_landing.csv")
 printInit("Data loaded successfully.")
 
 printInfo("Seaborn version: " + sns.__version__)
@@ -108,7 +109,7 @@ acc_x, acc_y, acc_z, absolute_acc = df["acc_x"], df["acc_y"], df["acc_z"], df["a
 
 smoothed_df = pd.DataFrame({"time": time, "acc_x": smoothing(acc_x, rows), "acc_y": smoothing(acc_y, rows), "acc_z": smoothing(acc_z, rows), "absolute_acc": smoothing(absolute_acc, rows)})
 
-smoothed_df.to_csv("smoothed_df.csv", index=False)
+smoothed_df.to_csv(CSV_DIR + "smoothed_df.csv", index=False)
 
 printStatus("Creating smoothed plot...")
 
