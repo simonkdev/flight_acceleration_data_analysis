@@ -1,6 +1,6 @@
 # Flight Acceleration Data Analysis
 
-A small project where I played around with using **accelerometer data recorded on a phone during aircraft takeoff and landing**. This project analyzes the acceleration patterns to extract meaningful insights about the flight phases.
+A small project where I played around with using **accelerometer data recorded on a phone during aircraft landing**. This project analyzes the acceleration patterns to extract meaningful insights about the flight phases.
 
 ---
 
